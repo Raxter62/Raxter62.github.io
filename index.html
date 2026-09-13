@@ -1,20 +1,219 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-Hant" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yan-Hua Chen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F5F1E8">
+  <meta name="description" content="Raxter62 的個人網站。元智大學資訊工程學系學生，記錄作品與像素小實驗。">
+  <title>Raxter62 Web</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/projects.css">
+  <script type="module" src="./js/main.js"></script>
 </head>
+<body data-view="home">
+  <section class="intro" id="intro" aria-label="穿越像素星空的開場動畫" hidden>
+    <canvas id="intro-sky" aria-hidden="true"></canvas>
+    <button class="skip-intro" id="skip-intro" type="button">略過開場 <span aria-hidden="true">↗</span></button>
+    <p class="sr-only" id="intro-status" role="status" aria-live="polite">Hello World</p>
+  </section>
 
-<body>
-    <h1>Yan-Hua Chen</h1>
-
-    <p>Computer Science and Engineering student at Yuan Ze University.</p>
-
-    <p>
-        <a href="https://github.com/Raxter62">
-            GitHub
+  <div class="site-shell" id="site-shell">
+    <canvas class="home-stars" id="home-stars" aria-hidden="true"></canvas>
+    <header class="site-header">
+        <a class="home-link" href="#home" id="home-link" aria-label="R — 返回首頁">
+          <svg class="nav-monogram" viewBox="0 0 5 7" aria-hidden="true" shape-rendering="crispEdges">
+            <path d="M0 0h4v1H0zM0 1h1v2H0zM4 1h1v2H4zM0 3h4v1H0zM0 4h1v3H0zM2 4h1v1H2zM3 5h1v1H3zM4 6h1v1H4z"/>
+          </svg>
         </a>
-    </p>
+      <nav class="navigation" aria-label="主要導覽">
+        <a class="nav-link" href="#about" aria-current="location">About Me</a>
+        <a class="nav-link" href="#projects"><span class="nav-label-wide">Projects</span><span class="nav-label-short">Projects</span></a>
+        <a class="nav-link nav-github" href="https://github.com/Raxter62" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only">（另開分頁）</span></a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切換為深色模式" aria-pressed="false" hidden>
+          <svg class="theme-icon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges">
+            <path class="moon-icon" d="M6 1h4v2H7v2H5v6h2v2h6v-2h2v3h-3v1H5v-2H3v-2H1V5h2V3h3z"/>
+            <path class="sun-icon" d="M7 0h2v3H7zM7 13h2v3H7zM0 7h3v2H0zM13 7h3v2h-3zM4 4h8v8H4zM2 2h2v2H2zM12 2h2v2h-2zM2 12h2v2H2zM12 12h2v2h-2z"/>
+          </svg>
+          <span id="theme-label">深色模式</span>
+        </button>
+        <button class="mobile-menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-menu" disabled>
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </nav>
+      <div class="mobile-menu-layer" id="mobile-menu" aria-hidden="true" inert>
+        <nav class="mobile-menu-panel" aria-label="手機主要導覽">
+          <p class="mobile-menu-eyebrow">R / NAVIGATION</p>
+          <a href="#about"><span class="menu-index" aria-hidden="true">01</span>About Me<span class="menu-arrow" aria-hidden="true">↗</span></a>
+          <a href="#projects"><span class="menu-index" aria-hidden="true">02</span>Projects<span class="menu-arrow" aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Raxter62" target="_blank" rel="noopener noreferrer"><span class="menu-index" aria-hidden="true">03</span>GitHub<span class="menu-arrow" aria-hidden="true">↗</span><span class="sr-only">（另開分頁）</span></a>
+          <p class="mobile-menu-caption">LEARN. CREATE. EXPLORE. REPEAT.</p>
+        </nav>
+      </div>
+    </header>
+    <main class="main-content" id="home" tabindex="-1">
+      <section class="profile" id="about" aria-labelledby="profile-name">
+        <div class="profile-heading">
+          <p class="profile-eyebrow"><span class="pixel-spark" aria-hidden="true"></span> ABOUT ME</p>
+          <h1 id="profile-name"><span class="sr-only">Yan-Hua Chen</span><span class="profile-name-art" aria-hidden="true"></span></h1>
+          <p class="profile-handle">@Raxter62</p>
+        </div>
+        <div class="profile-copy">
+          <h2>hi</h2>
+          <p class="profile-bio">目前就讀於元智大學資訊工程學系。<br>這裡是我的個人網站，放一些作品，也做一些有趣的小實驗。</p>
+          <dl class="profile-details">
+            <div>
+              <dt>就讀學校</dt>
+              <dd>元智大學<span lang="en">Yuan Ze University</span></dd>
+            </div>
+            <div>
+              <dt>學習領域</dt>
+              <dd>資訊工程<span lang="en">Computer Science &amp; Engineering</span></dd>
+            </div>
+          </dl>
+          <a class="profile-github" href="https://github.com/Raxter62" target="_blank" rel="noopener noreferrer">到 GitHub 看看 <span aria-hidden="true">↗</span><span class="sr-only">（另開分頁）</span></a>
+        </div>
+      </section>
+
+      <section class="projects-section" id="projects" aria-labelledby="projects-title" lang="en">
+        <header class="projects-heading">
+          <p class="profile-eyebrow"><span class="pixel-spark" aria-hidden="true"></span> PROJECT INDEX / 04</p>
+          <h2 id="projects-title">Projects<span class="terminal-cursor" aria-hidden="true">_</span></h2>
+          <p>Learning. Building. One project at a time.</p>
+        </header>
+        <p class="carousel-hint" id="carousel-hint">SWIPE / DRAG TO EXPLORE <span aria-hidden="true">↔</span></p>
+        <div class="project-table" id="project-carousel" role="region" aria-roledescription="carousel" aria-label="Projects" aria-describedby="carousel-hint" tabindex="0">
+          <article class="project-card" id="project-fitconnect" aria-labelledby="fitconnect-title" aria-roledescription="slide">
+            <header class="project-title-row">
+              <span class="project-number">01 / 04</span>
+              <h3 id="fitconnect-title">Fitconnect</h3>
+              <span class="project-type">WEB APP</span>
+            </header>
+            <div class="project-summary">
+              <p class="project-description">Fitness tracking, data insights &amp; an AI coaching platform.</p>
+              <p class="project-stack">PHP · JavaScript<br>PostgreSQL · LINE</p>
+            </div>
+            <div class="project-progress">
+              <div class="progress-label"><span>IMPLEMENTATION</span><strong class="progress-value">50%</strong></div>
+              <div class="pixel-progress" role="progressbar" aria-label="Fitconnect checklist completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="3 of 6 checklist items completed (50%)"><span style="width: 50%"></span></div>
+            </div>
+            <div class="project-checklist">
+              <h4><span aria-hidden="true">&gt;</span> COMPLETION CHECKLIST</h4>
+              <ul>
+                  <li data-state="complete"><span class="sr-only">Completed: </span>Workout tracking &amp; data insights</li>
+                  <li data-state="complete"><span class="sr-only">Completed: </span>Leaderboard</li>
+                  <li data-state="complete"><span class="sr-only">Completed: </span>LINE integration</li>
+                  <li data-state="pending"><span class="sr-only">To do: </span>AI coach</li>
+                  <li data-state="pending"><span class="sr-only">To do: </span>Improve authentication</li>
+                  <li data-state="pending"><span class="sr-only">To do: </span>Mobile UI redesign</li>
+              </ul>
+            </div>
+            <footer class="project-links">
+              <a href="https://fitconnect.raxter9501.com/" target="_blank" rel="noopener noreferrer">[Website <span aria-hidden="true">↗</span>]<span class="sr-only"> (opens in a new tab)</span></a>
+              <a href="https://github.com/Raxter62/Fitconnect" target="_blank" rel="noopener noreferrer">[GitHub <span aria-hidden="true">↗</span>]<span class="sr-only"> (opens in a new tab)</span></a>
+            </footer>
+          </article>
+
+          <article class="project-card" id="project-buffer" aria-labelledby="buffer-title" aria-roledescription="slide">
+            <header class="project-title-row">
+              <span class="project-number">02 / 04</span>
+              <h3 id="buffer-title">BufferOverdrive</h3>
+              <span class="project-type">WEB GAME</span>
+            </header>
+            <div class="project-summary">
+              <p class="project-description">A Canvas game with AI interactions &amp; shareable battle reports.</p>
+              <p class="project-stack">Flask · JavaScript<br>Gemini · Supabase</p>
+            </div>
+            <div class="project-progress">
+              <div class="progress-label"><span>IMPLEMENTATION</span><strong class="progress-value">60%</strong></div>
+              <div class="pixel-progress" role="progressbar" aria-label="BufferOverdrive checklist completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" aria-valuetext="3 of 5 checklist items completed (60%)"><span style="width: 60%"></span></div>
+            </div>
+            <div class="project-checklist">
+              <h4><span aria-hidden="true">&gt;</span> COMPLETION CHECKLIST</h4>
+              <ul>
+                  <li data-state="complete"><span class="sr-only">Completed: </span>Canvas gameplay &amp; leaderboard</li>
+                  <li data-state="complete"><span class="sr-only">Completed: </span>Gemini / LangChain integration</li>
+                  <li data-state="complete"><span class="sr-only">Completed: </span>PDF reports &amp; email delivery</li>
+                  <li data-state="pending"><span class="sr-only">To do: </span>Migrate to a personal server</li>
+                  <li data-state="pending"><span class="sr-only">To do: </span>Deployment</li>
+              </ul>
+            </div>
+            <footer class="project-links">
+              <span class="website-unavailable" title="Website not available yet"><span aria-hidden="true">↗</span><span class="sr-only">Website not available yet</span></span>
+              <a href="https://github.com/Raxter62/BufferOverdrive" target="_blank" rel="noopener noreferrer">[GitHub <span aria-hidden="true">↗</span>]<span class="sr-only"> (opens in a new tab)</span></a>
+            </footer>
+          </article>
+
+          <article class="project-card" id="project-website" aria-labelledby="website-title" aria-roledescription="slide">
+            <header class="project-title-row">
+              <span class="project-number">03 / 04</span>
+              <h3 id="website-title">Raxter62.github.io</h3>
+              <span class="project-type">PERSONAL SITE</span>
+            </header>
+            <div class="project-summary">
+              <p class="project-description">A personal corner of the web, built with pixels &amp; starlight.</p>
+              <p class="project-stack">HTML / CSS · JavaScript<br>Anime.js · Canvas</p>
+            </div>
+            <div class="project-progress">
+              <div class="progress-label"><span>IMPLEMENTATION</span><strong class="progress-value">60%</strong></div>
+              <div class="pixel-progress" role="progressbar" aria-label="Raxter62.github.io checklist completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" aria-valuetext="3 of 5 checklist items completed (60%)"><span style="width: 60%"></span></div>
+            </div>
+            <div class="project-checklist">
+              <h4><span aria-hidden="true">&gt;</span> COMPLETION CHECKLIST</h4>
+              <ul>
+                  <li data-state="complete"><span class="sr-only">Completed: </span>Pixel sky opening animation</li>
+                  <li data-state="complete"><span class="sr-only">Completed: </span>Light / dark themes</li>
+                  <li data-state="complete"><span class="sr-only">Completed: </span>Profile &amp; project showcase</li>
+                  <li data-state="pending"><span class="sr-only">To do: </span>Personal experience section</li>
+                  <li data-state="pending"><span class="sr-only">To do: </span>Move to a personal domain</li>
+              </ul>
+            </div>
+            <footer class="project-links">
+              <span class="website-unavailable" title="Website not available yet"><span aria-hidden="true">↗</span><span class="sr-only">Website not available yet</span></span>
+              <a href="https://github.com/Raxter62/Raxter62.github.io" target="_blank" rel="noopener noreferrer">[GitHub <span aria-hidden="true">↗</span>]<span class="sr-only"> (opens in a new tab)</span></a>
+            </footer>
+          </article>
+
+          <article class="project-card" id="project-sky-qr" aria-labelledby="sky-qr-title" aria-roledescription="slide">
+            <header class="project-title-row">
+              <span class="project-number">04 / 04</span>
+              <h3 id="sky-qr-title">Sky qr</h3>
+              <span class="project-type">CONCEPT</span>
+            </header>
+            <div class="project-summary">
+              <p class="project-description">An idea taking shape.<br>The journey starts here.</p>
+              <p class="project-stack">Technology stack<br>To be decided</p>
+            </div>
+            <div class="project-progress">
+              <div class="progress-label"><span>IMPLEMENTATION</span><strong class="progress-value">0%</strong></div>
+              <div class="pixel-progress" role="progressbar" aria-label="Sky qr checklist completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0 of 1 checklist items completed (0%)"><span style="width: 0%"></span></div>
+            </div>
+            <div class="project-checklist">
+              <h4><span aria-hidden="true">&gt;</span> COMPLETION CHECKLIST</h4>
+              <ul>
+                  <li data-state="pending"><span class="sr-only">To do: </span>Concept development</li>
+              </ul>
+            </div>
+            <footer class="project-links">
+              <span class="website-unavailable" title="Website not available yet"><span aria-hidden="true">↗</span><span class="sr-only">Website not available yet</span></span>
+            </footer>
+          </article>
+        </div>
+        <div class="carousel-controls" hidden>
+          <button type="button" class="carousel-arrow" id="project-prev" aria-label="Previous project" aria-controls="project-carousel">←</button>
+          <div class="carousel-dots" aria-label="Choose a project">
+            <button type="button" data-project="0" aria-label="Show Fitconnect" aria-controls="project-fitconnect" aria-current="true"><span></span></button>
+            <button type="button" data-project="1" aria-label="Show BufferOverdrive" aria-controls="project-buffer"><span></span></button>
+            <button type="button" data-project="2" aria-label="Show Raxter62.github.io" aria-controls="project-website"><span></span></button>
+            <button type="button" data-project="3" aria-label="Show Sky qr" aria-controls="project-sky-qr"><span></span></button>
+          </div>
+          <button type="button" class="carousel-arrow" id="project-next" aria-label="Next project" aria-controls="project-carousel">→</button>
+        </div>
+        <p class="carousel-status" role="status" aria-live="polite" aria-atomic="true">01 / 04 — Fitconnect</p>
+        <p class="progress-note">Progress is based on completed checklist items.</p>
+      </section>
+    </main>
+    <footer class="site-footer">© 2026 Raxter62</footer>
+  </div>
 </body>
 </html>

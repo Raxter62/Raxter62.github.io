@@ -1,0 +1,7 @@
+{
+  "name": "raxter-personal-page",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "node scripts/serve.mjs" },
+  "engines": { "node": ">=20" }
+}
