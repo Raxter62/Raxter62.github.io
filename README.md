@@ -2,7 +2,7 @@
 
 ## 網站簡介 ##
 Raxter62的個人網站，用來介紹自己、展示專案，記錄學習與創作
-網站: [raxter62.github.io](https://raxter62.github.io/)
+*  網站: [raxter62.github.io](https://raxter62.github.io/)
 
 ## 設計主題 ##
 像素與星空風格，搭配米白、炭黑與灰藍色
